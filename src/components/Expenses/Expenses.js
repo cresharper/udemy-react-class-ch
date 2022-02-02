@@ -10,13 +10,16 @@ function Expenses(props) {
   const [pickedYear, setPickedYear] = useState('')
 
   const selectedFilterYear = (filteredYear) => {
-    console.log('the selected filtered year is: ' + filteredYear)
     setPickedYear(filteredYear);
   }
 
-  const filteredExpenses = props.items.filter(expense => {
+  let filteredExpenses = props.items.filter(expense => {
     return expense.date.getFullYear().toString() === pickedYear;
   });
+
+  if (pickedYear === '') {
+    filteredExpenses = props.items;
+  }
 
   return(
     <div className='current-expenses'>
