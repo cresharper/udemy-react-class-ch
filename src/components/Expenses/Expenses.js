@@ -7,7 +7,7 @@ import './Expenses.css';
 
 function Expenses(props) {
 
-  const [pickedYear, setPickedYear] = useState('2020')
+  const [pickedYear, setPickedYear] = useState('')
 
   const selectedFilterYear = (filteredYear) => {
     console.log('the selected filtered year is: ' + filteredYear)
@@ -19,7 +19,7 @@ function Expenses(props) {
   });
 
   return(
-    <div>
+    <div className='current-expenses'>
       <Card className="expenses">
         <ExpensesFilter selected={pickedYear} onFilterYear={selectedFilterYear} />
         {filteredExpenses.map(expense => 
