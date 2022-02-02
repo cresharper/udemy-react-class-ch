@@ -17,3 +17,18 @@
     width: 100%;
     margin-bottom: 5px;
 }
+
+/* Make it an "X" */
+.app-navigation__burger--open span:nth-child(1) {
+    display: none;
+}
+
+.app-navigation__burger--open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.app-navigation__burger--open span:nth-child(3) {
+    transform: rotate(-45deg);
+    /* offset so it can line up to make an "X" */
+    margin-top: -0.5rem;
+}
